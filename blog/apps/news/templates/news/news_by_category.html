@@ -1,0 +1,10 @@
+{% extends 'news/base.html' %}
+{% block content %}
+    <h2><a href="{% url 'news_list' %}">Категория</a> > {{ item.title }}</h2>
+    <p>Новости по категории:</p>
+    <ul>
+        {% for item in category_news %}
+            <li><p><a href="{% url 'news_detail' item.id %}" target="_self">{{ item.title }}</a></p></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

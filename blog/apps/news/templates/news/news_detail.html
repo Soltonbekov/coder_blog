@@ -1,0 +1,7 @@
+{% extends 'news/base.html' %}
+{% block content %}
+    <h2><a href="{% url 'news_by_category' news.category.slug %}">{{ news.category.title }}</a> > {{ news.title }}</h2>
+    <p><small>Автор: {{ news.author }}</small></p>
+    <p><small>Дата публикации: {{ news.updated_at }}</small></p>
+    <p>{{ news.text }}</p>
+{% endblock %}
